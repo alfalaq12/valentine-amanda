@@ -18,7 +18,10 @@ body {
   position: relative;
   text-align: center;
   visibility: hidden;
-  width: 100vw;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container > div {
@@ -29,16 +32,16 @@ body {
 }
 
 .one {
-  font-size: 4.5rem;
+  font-size: clamp(2rem, 5vw, 4.5rem);
 }
 
 .two {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   font-weight: lighter;
 }
 
 .three {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .four .text-box {
@@ -47,7 +50,8 @@ body {
   margin: 0 auto;
   padding: 10px;
   position: relative;
-  width: 600px;
+  width: 90%;
+  max-width: 600px;
 }
 
 .text-box p {
@@ -70,7 +74,7 @@ body {
 }
 
 .five p {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   left: 0;
   position: absolute;
   right: 0;
@@ -83,17 +87,16 @@ body {
 }
 
 .five .idea-5 {
-  font-size: 4rem;
+  font-size: clamp(2rem, 7vw, 4rem);
 }
 
 .idea-5 span, .idea-6 span, .wish-hbd span {
   display: inline-block;
 }
 
-.idea-6 span{
-  font-size: 15rem;
+.idea-6 span {
+  font-size: clamp(5rem, 12vw, 15rem);
 }
-
 
 .six {
   position: relative;
@@ -103,17 +106,16 @@ body {
 
 .six img {
   display: inline-block;
-  height: 350px;
-  max-width: 100%;
-  /* height: auto; */
+  height: auto;
+  max-width: 90%;
 }
 
 .six .hat {
-  left: 41.5%;
+  left: 50%;
   position: absolute;
-  /* transform: scale(0.1); */
+  transform: translateX(-50%);
   top: -35%;
-  width: 80px;
+  width: clamp(50px, 8vw, 80px);
 }
 
 .baloons img {
@@ -122,11 +124,11 @@ body {
 }
 
 .baloons img:nth-child(even) {
-  left: -10%;
+  left: 0%;
 }
 
 .baloons img:nth-child(odd) {
-  right: -10%;
+  right: 0%;
 }
 
 .baloons img:nth-child(3n + 0) {
@@ -149,74 +151,20 @@ body {
   z-index: -1;
 }
 
-.eight svg:nth-child(1) {
-  fill: #bd6ecf;
-  left: 5vw;
-  top: 7vh;
-}
-
-.eight svg:nth-child(2) {
-  fill: #7dd175;
-  left: 35vw;
-  top: 23vh;
-}
-
-.eight svg:nth-child(3) {
-  fill: #349d8b;
-  left: 23vw;
-  top: 33vh;
-}
-
-.eight svg:nth-child(4) {
-  fill: #347a9d;
-  left: 57vw;
-  top: 43vh;
-}
-
-.eight svg:nth-child(5) {
-  fill: #c66053;
-  left: 7vw;
-  top: 68vh;
-}
-
-.eight svg:nth-child(6) {
-  fill: #bfaa40;
-  left: 77vw;
-  top: 42vh;
-}
-
-.eight svg:nth-child(7) {
-  fill: #e3bae8;
-  left: 83vw;
-  top: 68vh;
-}
-
-.eight svg:nth-child(8) {
-  fill: #8762cb;
-  left: 37vw;
-  top: 86vh;
-}
-
-.eight svg:nth-child(9) {
-  fill: #9a90da;
-  left: 87vw;
-  top: 94vh;
-}
-
 .wish-hbd {
-  font-size: 3em;
+  font-size: clamp(2rem, 5vw, 3em);
   margin: 0;
   text-transform: uppercase;
 }
 
 .wish h5 {
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 3vw, 2rem);
   font-weight: lighter;
   margin: 10px 0 0;
 }
 
 .nine p {
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 3vw, 2rem);
   font-weight: lighter;
 }
 
@@ -226,37 +174,14 @@ body {
 }
 
 /* Media Queries */
-@media screen and (max-height: 1000px) {
-  .six .hat {
-    left: 40%;
-  }
-}
-
-@media screen and (max-height: 800px) {
-  .six .hat {
-    left: 37%;
-  }
-}
-
-@media screen and (max-height: 700px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
-@media screen and (max-height: 850px) and (max-width: 450px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
 @media screen and (max-width: 500px) {
   .container {
-    width: 90%;
+    width: 100%;
+    padding: 0 5%;
   }
 
   .four .text-box {
-    width: 90%;
+    width: 100%;
   }
 
   .text-box .fake-btn {
@@ -268,12 +193,7 @@ body {
     display: block;
   }
 
-  .idea-6 span {
-    font-size: 10rem;
-  }
-
   .six .hat {
-    /* top: -20px; */
     width: 50px;
   }
 
@@ -287,6 +207,5 @@ body {
 
   .nine p {
     font-size: 1.5rem;
-    font-weight: lighter;
   }
 }
